@@ -8,7 +8,7 @@ namespace BigO
 {
     public class HashSetProcessor
     {
-        public IEnumerable<Int32> FindDuplicates(HashSet<Int32> hashOne, HashSet<Int32> hashTwo)
+        public IEnumerable<T> FindDuplicates<T>(HashSet<T> hashOne, HashSet<T> hashTwo)
         {
             return hashOne.Intersect(hashTwo);
         }

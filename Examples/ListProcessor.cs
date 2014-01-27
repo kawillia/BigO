@@ -8,17 +8,15 @@ namespace BigO
 {
     public class ListProcessor
     {
-        public List<Int32> FindDuplicates(List<Int32> listOne, List<Int32> listTwo)
+        public IEnumerable<T> FindDuplicates<T>(List<T> listOne, List<T> listTwo)
         {
-            var duplicates = new List<Int32>();
+            var duplicates = new List<T>();
 
             for (var i = 0; i < listOne.Count; i++)
-                if (listTwo.Contains(i))
-                    duplicates.Add(i);
+                if (listTwo.Contains(listOne[i]))
+                    duplicates.Add(listOne[i]);
 
             return duplicates;
         }
-
-
     }
 }
