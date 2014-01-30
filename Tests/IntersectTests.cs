@@ -6,13 +6,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace BigO.Tests
 {
     [TestClass]
-    public class DuplicatesTests
+    public class IntersectTests
     {
-        private const Int32 NumberOfItems = 1000;
+        private const Int32 NumberOfItems = 100000;
 
         private RandomCollectionPopulator randomCollectionPopulator;
 
-        public DuplicatesTests()
+        public IntersectTests()
         {
             randomCollectionPopulator = new RandomCollectionPopulator();
         }
@@ -26,7 +26,7 @@ namespace BigO.Tests
             randomCollectionPopulator.Populate(listOne, NumberOfItems);
             randomCollectionPopulator.Populate(listTwo, NumberOfItems);
 
-            var duplicates = Duplicates.UsingSets(listOne, listTwo);
+            var duplicates = Intersect.UsingSets(listOne, listTwo);
             duplicates.ToList();
         }
 
@@ -39,7 +39,7 @@ namespace BigO.Tests
             randomCollectionPopulator.Populate(listOne, NumberOfItems);
             randomCollectionPopulator.Populate(listTwo, NumberOfItems);
 
-            var duplicates = Duplicates.UsingLists(listOne, listTwo);
+            var duplicates = Intersect.UsingLists(listOne, listTwo);
             duplicates.ToList();
         }
     }

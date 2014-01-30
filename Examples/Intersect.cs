@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BigO
 {
-    public class Duplicates
+    public class Intersect
     {
         public static IEnumerable<T> UsingLists<T>(List<T> listOne, List<T> listTwo)
         {
