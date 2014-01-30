@@ -8,13 +8,15 @@ namespace BigO.Tests
     [TestClass]
     public class HashSetProcessorTests
     {
-        private Random random;
+        private const Int32 NumberOfItems = 100000;
+
         private HashSetProcessor processor;
+        private RandomCollectionPopulator randomCollectionPopulator;
 
         public HashSetProcessorTests()
         {
-            random = new Random(1);
             processor = new HashSetProcessor();
+            randomCollectionPopulator = new RandomCollectionPopulator();
         }
 
         [TestMethod]
@@ -23,10 +25,10 @@ namespace BigO.Tests
             var listOne = new HashSet<Int32>();
             var listTwo = new HashSet<Int32>();
 
-            PopulateList(listOne, 100000);
-            PopulateList(listTwo, 100000);
+            randomCollectionPopulator.Populate(listOne, NumberOfItems);
+            randomCollectionPopulator.Populate(listTwo, NumberOfItems);
 
-            var results = processor.FindDuplicates(listOne, listTwo);
+            processor.FindDuplicates(listOne, listTwo);
         }
 
         [TestMethod]
@@ -35,15 +37,7 @@ namespace BigO.Tests
             var listOne = new HashSet<Int32>();
             var listTwo = new HashSet<Int32>();
 
-            PopulateList(listOne, 100000);
-
-            var results = processor.FindDuplicates(listOne, listTwo);
-        }
-
-        private void PopulateList(HashSet<Int32> list, Int32 numberOfIntegers)
-        {
-            for (var i = 0; i < numberOfIntegers; i++)
-                list.Add(random.Next());
+            randomCollectionPopulator.Populate(listOne, NumberOfItems);
         }
     }
 }

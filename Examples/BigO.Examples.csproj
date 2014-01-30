@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HashSetProcessor.cs" />
+    <Compile Include="Distinct.cs" />
     <Compile Include="ListProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
