@@ -10,7 +10,7 @@ namespace BigO.Tests
     [TestClass]
     public class DistinctTests
     {
-        private const Int32 NumberOfItems = 100000;
+        private const Int32 NumberOfItems = 1000;
 
         private RandomCollectionPopulator randomCollectionPopulator;
         private List<Int32> items;

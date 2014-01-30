@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BigO
 {
-    public class ListProcessor
+    public class Duplicates
     {
-        public IEnumerable<T> FindDuplicates<T>(List<T> listOne, List<T> listTwo)
+        public static IEnumerable<T> UsingLists<T>(List<T> listOne, List<T> listTwo)
         {
             var duplicates = new List<T>();
 
@@ -17,6 +17,11 @@ namespace BigO
                     duplicates.Add(listOne[i]);
 
             return duplicates;
+        }
+
+        public static IEnumerable<T> UsingSets<T>(HashSet<T> hashOne, HashSet<T> hashTwo)
+        {
+            return hashOne.Intersect(hashTwo);
         }
     }
 }

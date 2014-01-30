@@ -6,21 +6,19 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace BigO.Tests
 {
     [TestClass]
-    public class HashSetProcessorTests
+    public class DuplicatesTests
     {
-        private const Int32 NumberOfItems = 100000;
+        private const Int32 NumberOfItems = 1000;
 
-        private HashSetProcessor processor;
         private RandomCollectionPopulator randomCollectionPopulator;
 
-        public HashSetProcessorTests()
+        public DuplicatesTests()
         {
-            processor = new HashSetProcessor();
             randomCollectionPopulator = new RandomCollectionPopulator();
         }
 
         [TestMethod]
-        public void FindDuplicatesInTwoHashSets()
+        public void UsingSets()
         {
             var listOne = new HashSet<Int32>();
             var listTwo = new HashSet<Int32>();
@@ -28,16 +26,21 @@ namespace BigO.Tests
             randomCollectionPopulator.Populate(listOne, NumberOfItems);
             randomCollectionPopulator.Populate(listTwo, NumberOfItems);
 
-            processor.FindDuplicates(listOne, listTwo);
+            var duplicates = Duplicates.UsingSets(listOne, listTwo);
+            duplicates.ToList();
         }
 
         [TestMethod]
-        public void AddItemsToHashSet()
+        public void UsingLists()
         {
-            var listOne = new HashSet<Int32>();
-            var listTwo = new HashSet<Int32>();
+            var listOne = new List<Int32>();
+            var listTwo = new List<Int32>();
 
             randomCollectionPopulator.Populate(listOne, NumberOfItems);
+            randomCollectionPopulator.Populate(listTwo, NumberOfItems);
+
+            var duplicates = Duplicates.UsingLists(listOne, listTwo);
+            duplicates.ToList();
         }
     }
 }

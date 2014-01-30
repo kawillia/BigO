@@ -39,9 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HashSetProcessor.cs" />
+    <Compile Include="Except.cs" />
+    <Compile Include="Duplicates.cs" />
     <Compile Include="Distinct.cs" />
-    <Compile Include="ListProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
