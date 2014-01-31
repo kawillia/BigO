@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Except.cs" />
-    <Compile Include="Duplicates.cs" />
+    <Compile Include="Intersect.cs" />
     <Compile Include="Distinct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

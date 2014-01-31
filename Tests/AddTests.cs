@@ -10,7 +10,7 @@ namespace BigO.Tests
     [TestClass]
     public class AddTests
     {
-        private const Int32 NumberOfItems = 10000;
+        private const Int32 NumberOfItems = 1000000;
 
         private RandomCollectionPopulator randomCollectionPopulator;
 
@@ -27,9 +27,16 @@ namespace BigO.Tests
         }
 
         [TestMethod]
-        public void UsingLists()
+        public void UsingList()
         {
             var list = new List<Int32>();
+            randomCollectionPopulator.Populate(list, NumberOfItems);
+        }
+
+        [TestMethod]
+        public void UsingLinkedList()
+        {
+            var list = new LinkedList<Int32>();
             randomCollectionPopulator.Populate(list, NumberOfItems);
         }
     }
